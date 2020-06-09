@@ -1,6 +1,10 @@
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <meta charset="utf-8">
     <title>未確認生命体報告フォーラム</title>
   </head>
@@ -9,13 +13,12 @@
       <h1><a href="/">未確認生命体報告フォーラム</a></h1>
     </div>
     <h2>find UMA on the bottom of the internet...</h2>
-    <p><a href="">post</a></p>
-    <p><a href="">list</a></p>
+    <p><a href="">report UMA</a></p>
     <p><a href="">who are you??</a></p>
     {% for post in posts %}
       <div class="posts">
         <p>published : {{post.published_date}}</p>
-        <p><a href="">{{post.title}}</a></p>
+        <p><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></p>
         <p>{{post.text|linebreaksbr}}</p>
       </div>
     {% endfor %}
