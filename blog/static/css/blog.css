@@ -1,0 +1,43 @@
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p,
+form, input, div {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  font-family: "Comic Sans MS";
+  background-color: black;
+  height:90px;
+}
+
+.header-logo {
+  font-size:36px;
+  float:left;
+  color:white;
+  margin:20px 40px;
+}
+
+a {
+  text-decoration: none;
+  color:white;
+}
+
+li {
+  list-style: none;
+  float:right;
+  background-color: black;
+  color:#fff;
+  margin:33px 20px;
+  font-size: 20px;
+}
+
+content {
+  font-family: "Comic Sans MS";
+}
+
+.post {
+  padding: 20px 50px 20px 50px;
+  border-bottom: 2px solid #dee7ec;
+}

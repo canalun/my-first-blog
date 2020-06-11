@@ -1,0 +1,22 @@
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+        <div class = "header-logo"><a href="{% url 'top' %}">Mystery Report Forum</a></div>
+        <ul>
+          <li><a href="{% url 'login' %}">login</a></li>
+          <li><a href="{% url 'finds' %}">finds</a></li>
+          <li><a href="{% url 'report' %}">report</a></li>
+        </ul>
+    </header>
+    <content>
+      {% block content %}
+      {% endblock %}
+    </content>
+  </body>
+</html>

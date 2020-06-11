@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+  {% block title %}report {{post.pk}}{% endblock %}
+
+  {% block content %}
+    {% if post.published_date %}
+        <p>published : {{post.published_date}}</p>
+    {% endif %}
+    <p>{{post.title}}</p>
+    <p>{{post.text|linebreaksbr}}</p>
+  {% endblock %}

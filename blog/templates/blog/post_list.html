@@ -1,26 +1,16 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+  {% block title %}mystery report forum {{post.pk}}{% endblock %}
 
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <meta charset="utf-8">
-    <title>未確認生命体報告フォーラム</title>
-  </head>
-  <body>
-    <div class="page_title">
-      <h1><a href="/">未確認生命体報告フォーラム</a></h1>
-    </div>
-    <h2>find UMA on the bottom of the internet...</h2>
-    <p><a href="">report UMA</a></p>
-    <p><a href="">who are you??</a></p>
+  {% block content %}
     {% for post in posts %}
-      <div class="posts">
-        <p>published : {{post.published_date}}</p>
-        <p><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></p>
-        <p>{{post.text|linebreaksbr}}</p>
+      <div class="post">
+        <p>reported by {{ post.author }}</p>
+        <p>object name: {{ post.title }}</p>
+        <p>found date: {{ post.published_date }}</p>
+        <p>description:<br>
+          {{ post.text|linebreaksbr }}</p>
+        <p>{{ post.image }}</p>
       </div>
     {% endfor %}
-  </body>
-</html>
+  {% endblock %}
