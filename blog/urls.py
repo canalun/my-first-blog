@@ -6,4 +6,5 @@ urlpatterns = [
         path("report", views.report, name="report"),
         path("finds", views.post_list, name="finds"),
         path("login", views.login, name="login"),
+        path("report/<int:pk>/edit", views.post_edit, name="post_edit")
 ]

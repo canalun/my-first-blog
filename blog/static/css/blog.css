@@ -24,6 +24,11 @@ a {
   color:white;
 }
 
+.edit_button {
+  text-decoration: none;
+  color:black;
+}
+
 li {
   list-style: none;
   float:right;
@@ -40,4 +45,8 @@ content {
 .post {
   padding: 20px 50px 20px 50px;
   border-bottom: 2px solid #dee7ec;
+}
+
+.post_field {
+  padding: 20px 50px 20px 50px;
 }
