@@ -9,7 +9,12 @@
     <header>
         <div class = "header-logo"><a href="{% url 'top' %}">Mystery Report Forum</a></div>
         <ul>
+          {% if user.is_authenticated %}
+          <li>Hello, {{ user.username }}</li>
+          <li><a href="{% url 'logout' %}">logout</a></li>
+          {% else %}
           <li><a href="{% url 'login' %}">login</a></li>
+          {% endif %}
           <li><a href="{% url 'finds' %}">finds</a></li>
           <li><a href="{% url 'report' %}">report</a></li>
         </ul>
