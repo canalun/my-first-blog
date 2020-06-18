@@ -42,7 +42,10 @@ def post_edit(request,pk):
             post.save()
             return redirect('finds')
     else:
-        form = PostForm(instance=post)
+        if post.author == request.user:
+            form = PostForm(instance=post)
+        else:
+            return redirect('finds')
     return render(request, "blog/report.html", {'form':form})
 
 
